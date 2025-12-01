@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4jlvm10r6aoy"
+path="res://.godot/imported/SUSHI LOOP (Game play music) .mp3-9f9cf62abcb7c194c91144001175d5b7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SUSHI LOOP (Game play music) .mp3"
+dest_files=["res://.godot/imported/SUSHI LOOP (Game play music) .mp3-9f9cf62abcb7c194c91144001175d5b7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
