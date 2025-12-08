@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nb83houvy276"
+path="res://.godot/imported/KAOUNTO DAUNO.mp3-7dc1de20d7133dc2265940e6d0d84340.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/KAOUNTO DAUNO.mp3"
+dest_files=["res://.godot/imported/KAOUNTO DAUNO.mp3-7dc1de20d7133dc2265940e6d0d84340.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

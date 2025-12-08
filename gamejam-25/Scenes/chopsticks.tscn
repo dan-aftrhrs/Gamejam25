@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://caqh2qfhtdf38" path="res://Assets/Sprites/Chopsticks.png" id="2_2gg8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qa1y"]
-size = Vector2(0.1407758, 0.40211487)
+size = Vector2(0.12595731, 0.3030913)
 
 [node name="Chopsticks" type="Node2D" node_paths=PackedStringArray("chopstick_sprite")]
 z_index = 1
 position = Vector2(960, 1300)
 script = ExtResource("1_1qa1y")
-bottom_row_y_pos = 1300.0
+bottom_row_y_pos = 0.0
+move_speed = 10.0
 chopstick_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,9 +19,9 @@ position = Vector2(0, -76)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_2gg8e")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ChopstickDetectionArea" type="Area2D" parent="."]
 scale = Vector2(1079.7311, 158.36823)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.0037046075, -1.2123642)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChopstickDetectionArea"]
+position = Vector2(0.0037046075, -0.12628937)
 shape = SubResource("RectangleShape2D_1qa1y")
