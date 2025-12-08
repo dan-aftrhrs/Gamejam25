@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://boef7lov2gv82"]
+
+[ext_resource type="Script" uid="uid://bqtveaepwttfo" path="res://Scripts/chopsticks.gd" id="1_1qa1y"]
+[ext_resource type="Texture2D" uid="uid://caqh2qfhtdf38" path="res://Assets/Sprites/Chopsticks.png" id="2_2gg8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qa1y"]
+size = Vector2(0.1407758, 0.40211487)
+
+[node name="Chopsticks" type="Node2D" node_paths=PackedStringArray("chopstick_sprite")]
+z_index = 1
+position = Vector2(960, 1300)
+script = ExtResource("1_1qa1y")
+bottom_row_y_pos = 1300.0
+chopstick_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -76)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_2gg8e")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1079.7311, 158.36823)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.0037046075, -1.2123642)
+shape = SubResource("RectangleShape2D_1qa1y")
