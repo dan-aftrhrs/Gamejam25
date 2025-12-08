@@ -1,8 +1,76 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp0cgx4kj0557"]
+[gd_scene load_steps=13 format=3 uid="uid://cp0cgx4kj0557"]
 
-[ext_resource type="Script" uid="uid://bms335auai114" path="res://Scenes/sushi.gd" id="1_b7l4c"]
+[ext_resource type="Script" uid="uid://bms335auai114" path="res://Scripts/sushi.gd" id="1_b7l4c"]
+[ext_resource type="Texture2D" uid="uid://c0gmbsn861sir" path="res://Assets/Sprites/Rolling/Salmon_Nigiri_spritesheet.png" id="2_ckkqv"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wvrkq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1ntm"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5djj"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhded"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdogj"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsmhp"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkfbd"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(2500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt3h5"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(3000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5ai2"]
+atlas = ExtResource("2_ckkqv")
+region = Rect2(3500, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_butax"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1ntm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5djj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhded")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdogj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsmhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkfbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt3h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5ai2")
+}],
+"loop": true,
+"name": &"Spin",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b7l4c"]
 radius = 56.0
@@ -10,10 +78,13 @@ radius = 56.0
 [node name="SushiRoll" type="Area2D"]
 script = ExtResource("1_b7l4c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3.8146973e-06, -3.33786e-06)
-scale = Vector2(112, 111.99999)
-texture = SubResource("PlaceholderTexture2D_wvrkq")
+scale = Vector2(0.38399994, 0.3840002)
+sprite_frames = SubResource("SpriteFrames_butax")
+animation = &"Spin"
+autoplay = "Spin"
+frame_progress = 0.47317797
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b7l4c")

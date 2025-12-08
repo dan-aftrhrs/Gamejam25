@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8ioyrvvrq6jk"
+path="res://.godot/imported/Count down.mp3-c9835bc8592556b1dd6815c1fd5a73ff.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Count down.mp3"
+dest_files=["res://.godot/imported/Count down.mp3-c9835bc8592556b1dd6815c1fd5a73ff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

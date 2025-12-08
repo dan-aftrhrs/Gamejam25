@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgua6duu8oh15"]
+
+[ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://cy6xpge8qlbx7" path="res://Scenes/spawner.tscn" id="3_fos0i"]
+[ext_resource type="PackedScene" uid="uid://bfecoktfsgpjg" path="res://Scenes/Sushi Types/Nigiri.tscn" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://rr28e8unhg3" path="res://Scenes/Sushi Types/Tomago.tscn" id="4_cm0pq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 536)
+scale = Vector2(0.50185186, 0.50185186)
+texture = ExtResource("2_cm0pq")
+
+[node name="Spawner" parent="." node_paths=PackedStringArray("left_spawn_point", "right_spawn_point") instance=ExtResource("3_fos0i")]
+spawn_interval = 0.5
+sushi_speed = 400.0
+sushi_scenes = Array[PackedScene]([ExtResource("3_r0du0"), ExtResource("4_cm0pq")])
+left_spawn_point = NodePath("LeftSpawner")
+right_spawn_point = NodePath("RightSpawner")
+
+[node name="Timer2dSecondTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="Chopsticks" type="Node2D" parent="."]
+
+[editable path="Spawner"]
