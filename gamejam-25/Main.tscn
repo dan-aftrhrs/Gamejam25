@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=16 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://llgxsbds3w6t" path="res://Scenes/Sushi Types/Maki.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://c6eafh0vb50jp" path="res://Scenes/Sushi Types/Wasabi.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://copj1oweop7wq" path="res://Scripts/CounterDisplay.gd" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="14_w48qg"]
 
 [sub_resource type="Theme" id="Theme_272bh"]
 
@@ -72,5 +73,11 @@ offset_bottom = 478.0
 script = ExtResource("9_03owx")
 plate_spacing = 150.0
 sushi_scale = 0.3
+
+[node name="CRT" parent="." instance=ExtResource("14_w48qg")]
+offset_left = 1326.0
+offset_top = 43.0
+offset_right = 1839.0
+offset_bottom = 311.0
 
 [editable path="Spawner"]

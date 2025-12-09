@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl3a8vueaql20"]
+
+[ext_resource type="Shader" uid="uid://0flbg13pbmqk" path="res://CRT.gdshader" id="1_u3egi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vivmo"]
+shader = ExtResource("1_u3egi")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.114000005415
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.2000000095
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 31.374001490265
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.102000004845
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.011000048022500097
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.04800000228
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.3930000186675
+
+[node name="CRT" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1300.0
+offset_top = -3.0
+offset_right = 1880.0
+offset_bottom = 282.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vivmo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -39.0
+offset_right = 47.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
