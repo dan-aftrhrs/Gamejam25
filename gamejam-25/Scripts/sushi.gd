@@ -1,10 +1,12 @@
-extends CharacterBody2D # Or Node2D
+extends CharacterBody2D
+
+# Add this identifier
+@export var sushi_type: String = "salmon" 
 
 var direction: Vector2 = Vector2.ZERO
 var speed: float = 0.0
 
 @onready var sushi_sprite: Sprite2D = $Sprite2D
-
 @export var visual_width_override: float = 0.0
 
 func _physics_process(delta):

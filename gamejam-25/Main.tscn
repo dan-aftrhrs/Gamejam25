@@ -1,18 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=15 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
+[ext_resource type="Texture2D" uid="uid://c80vqg0qhp76j" path="res://Assets/Sprites/Makiroll_Plate.PNG" id="2_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://cy6xpge8qlbx7" path="res://Scenes/spawner.tscn" id="3_5vw27"]
+[ext_resource type="Texture2D" uid="uid://ciblvko17seiv" path="res://Assets/Sprites/Nigiri_Plate.PNG" id="3_c2ibq"]
+[ext_resource type="Texture2D" uid="uid://d2nro34a8raxn" path="res://Assets/Sprites/Tomago_Plate.PNG" id="4_j4qnp"]
 [ext_resource type="PackedScene" uid="uid://bfecoktfsgpjg" path="res://Scenes/Sushi Types/Nigiri.tscn" id="4_kek77"]
 [ext_resource type="PackedScene" uid="uid://rr28e8unhg3" path="res://Scenes/Sushi Types/Tomago.tscn" id="5_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dbbyrc56ro7yp" path="res://Assets/Sprites/Wasabi_plate.PNG" id="5_fpfj3"]
 [ext_resource type="PackedScene" uid="uid://boef7lov2gv82" path="res://Scenes/chopsticks.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://llgxsbds3w6t" path="res://Scenes/Sushi Types/Maki.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://c6eafh0vb50jp" path="res://Scenes/Sushi Types/Wasabi.tscn" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://copj1oweop7wq" path="res://Scripts/CounterDisplay.gd" id="9_03owx"]
 
 [sub_resource type="Theme" id="Theme_272bh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
+maki_counter_img = ExtResource("2_c6i3y")
+nigiri_counter_img = ExtResource("3_c2ibq")
+tomago_counter_img = ExtResource("4_j4qnp")
+wasabi_counter_img = ExtResource("5_fpfj3")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 536)
@@ -52,5 +61,16 @@ offset_bottom = 446.0
 theme = SubResource("Theme_272bh")
 text = "Space - Collect
 B/Shift/Up/Down - Switch Lane"
+
+[node name="CounterDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 585.0
+offset_top = 407.0
+offset_right = 1322.0
+offset_bottom = 478.0
+script = ExtResource("9_03owx")
+plate_spacing = 150.0
+sushi_scale = 0.3
 
 [editable path="Spawner"]
