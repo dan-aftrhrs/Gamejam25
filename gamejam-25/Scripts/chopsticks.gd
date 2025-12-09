@@ -2,7 +2,7 @@ extends Node2D
 
 @export var top_row_y_pos: float = 832.0   # Y-position for the top row
 @export var bottom_row_y_pos: float = 1024.0 # Y-position for the bottom row
-@export_range(0.1, 10.0, 0.1) var move_speed: float = 5.0 # Speed at which chopsticks move between rows
+@export_range(0.1, 50.0, 0.1) var move_speed: float = 25.0 # Speed at which chopsticks move between rows
 
 @export var chopstick_sprite: Sprite2D # Reference to your chopsticks sprite
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=10 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://rr28e8unhg3" path="res://Scenes/Sushi Types/Tomago.tscn" id="5_4c57u"]
 [ext_resource type="PackedScene" uid="uid://boef7lov2gv82" path="res://Scenes/chopsticks.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://llgxsbds3w6t" path="res://Scenes/Sushi Types/Maki.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://c6eafh0vb50jp" path="res://Scenes/Sushi Types/Wasabi.tscn" id="7_5vw27"]
 
 [sub_resource type="Theme" id="Theme_272bh"]
 
@@ -21,7 +22,7 @@ texture = ExtResource("2_272bh")
 [node name="Spawner" parent="." node_paths=PackedStringArray("left_spawn_point", "right_spawn_point") instance=ExtResource("3_5vw27")]
 spawn_interval = 0.5
 sushi_speed = 400.0
-sushi_scenes = Array[PackedScene]([ExtResource("4_kek77"), ExtResource("5_4c57u"), ExtResource("6_272bh")])
+sushi_scenes = Array[PackedScene]([ExtResource("4_kek77"), ExtResource("5_4c57u"), ExtResource("6_272bh"), ExtResource("7_5vw27")])
 left_spawn_point = NodePath("LeftSpawner")
 right_spawn_point = NodePath("RightSpawner")
 
