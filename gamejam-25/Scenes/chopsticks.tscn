@@ -49,7 +49,8 @@ size = Vector2(0.1407758, 0.70721245)
 z_index = 1
 position = Vector2(960, 1300)
 script = ExtResource("1_1qa1y")
-bottom_row_y_pos = 1300.0
+top_row_y_pos = 700.0
+bottom_row_y_pos = 900.0
 chopstick_sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

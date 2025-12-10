@@ -36,12 +36,14 @@ sushi_scenes = Array[PackedScene]([ExtResource("4_kek77"), ExtResource("5_4c57u"
 left_spawn_point = NodePath("LeftSpawner")
 right_spawn_point = NodePath("RightSpawner")
 
+[node name="LeftSpawner" parent="Spawner" index="0"]
+position = Vector2(-128, 896)
+
 [node name="Timer2dSecondTimer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
 
 [node name="Chopsticks" parent="." instance=ExtResource("6_7mycd")]
-bottom_row_y_pos = 700.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
