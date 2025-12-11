@@ -8,6 +8,7 @@ extends Node2D
 @export var nigiri_counter_img: Texture2D
 @export var tomago_counter_img: Texture2D
 @export var wasabi_counter_img: Texture2D
+@export var ebi_counter_img: Texture2D
 
 # Map strings to textures
 var sushi_map = {}
@@ -24,7 +25,8 @@ func _ready():
 		"Maki": maki_counter_img,
 		"Nigiri": nigiri_counter_img,
 		"Tomago": tomago_counter_img,
-		"Wasabi": wasabi_counter_img
+		"Wasabi": wasabi_counter_img,
+		"Ebi": ebi_counter_img
 	}
 
 func on_sushi_selected(sushi_instance: CharacterBody2D):

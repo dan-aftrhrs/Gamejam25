@@ -1,46 +1,50 @@
-[gd_scene load_steps=7 format=3 uid="uid://boef7lov2gv82"]
+[gd_scene load_steps=11 format=3 uid="uid://boef7lov2gv82"]
 
 [ext_resource type="Script" uid="uid://bqtveaepwttfo" path="res://Scripts/chopsticks.gd" id="1_1qa1y"]
-[ext_resource type="Texture2D" uid="uid://caqh2qfhtdf38" path="res://Assets/Sprites/Chopsticks.png" id="2_2gg8e"]
+[ext_resource type="Texture2D" uid="uid://cgsemm163wj8e" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_1.PNG" id="2_5o633"]
+[ext_resource type="Texture2D" uid="uid://dj5xe14ah2dac" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_2.PNG" id="3_6u4h5"]
+[ext_resource type="Texture2D" uid="uid://ks5bkcmuxvyx" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_3.PNG" id="4_dybtf"]
+[ext_resource type="Texture2D" uid="uid://ds1kyn3povhhc" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_4.PNG" id="5_v8iox"]
+[ext_resource type="Texture2D" uid="uid://b5u8w3th77cfo" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_5.PNG" id="6_f2j5u"]
+[ext_resource type="Texture2D" uid="uid://fu7sed4pregj" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_6.PNG" id="7_skf3g"]
 
-[sub_resource type="Animation" id="Animation_1qa1y"]
-resource_name = "Idle"
-length = 4.0
-loop_mode = 1
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Sprite2D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, -76), Vector2(0, -80), Vector2(0, -76), Vector2(0, -70)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4q0l"]
+atlas = ExtResource("6_f2j5u")
+region = Rect2(0, 0, 850, 850)
 
-[sub_resource type="Animation" id="Animation_2gg8e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -76)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jcdqa"]
-_data = {
-&"Idle": SubResource("Animation_1qa1y"),
-&"RESET": SubResource("Animation_2gg8e")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qa1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5o633")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6u4h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dybtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8iox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f2j5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4q0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_skf3g")
+}],
+"loop": false,
+"name": &"Pick",
+"speed": 25.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qa1y"]
 size = Vector2(0.1407758, 0.70721245)
@@ -51,19 +55,16 @@ position = Vector2(960, 1300)
 script = ExtResource("1_1qa1y")
 top_row_y_pos = 700.0
 bottom_row_y_pos = 900.0
-chopstick_sprite = NodePath("Sprite2D")
+chopstick_sprite = NodePath("")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -76)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 76)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_2gg8e")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Area2D/CollisionShape2D")
-libraries = {
-&"": SubResource("AnimationLibrary_jcdqa")
-}
+sprite_frames = SubResource("SpriteFrames_1qa1y")
+animation = &"Pick"
 autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1079.7311, 158.36823)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=18 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
@@ -9,10 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bfecoktfsgpjg" path="res://Scenes/Sushi Types/Nigiri.tscn" id="4_kek77"]
 [ext_resource type="PackedScene" uid="uid://rr28e8unhg3" path="res://Scenes/Sushi Types/Tomago.tscn" id="5_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dbbyrc56ro7yp" path="res://Assets/Sprites/Wasabi_plate.PNG" id="5_fpfj3"]
+[ext_resource type="Texture2D" uid="uid://cbqdlfe7cg6j" path="res://Assets/Sprites/Ebi_plate.PNG" id="6_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://boef7lov2gv82" path="res://Scenes/chopsticks.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://llgxsbds3w6t" path="res://Scenes/Sushi Types/Maki.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://c6eafh0vb50jp" path="res://Scenes/Sushi Types/Wasabi.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://copj1oweop7wq" path="res://Scripts/CounterDisplay.gd" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://uf8u26ukku4e" path="res://Scenes/Sushi Types/Ebi.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="14_w48qg"]
 
 [sub_resource type="Theme" id="Theme_272bh"]
@@ -23,6 +25,7 @@ maki_counter_img = ExtResource("2_c6i3y")
 nigiri_counter_img = ExtResource("3_c2ibq")
 tomago_counter_img = ExtResource("4_j4qnp")
 wasabi_counter_img = ExtResource("5_fpfj3")
+ebi_counter_img = ExtResource("6_2cqfq")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 536)
@@ -32,14 +35,14 @@ texture = ExtResource("2_272bh")
 [node name="Spawner" parent="." node_paths=PackedStringArray("left_spawn_point", "right_spawn_point") instance=ExtResource("3_5vw27")]
 spawn_interval = 0.5
 sushi_speed = 400.0
-sushi_scenes = Array[PackedScene]([ExtResource("4_kek77"), ExtResource("5_4c57u"), ExtResource("6_272bh"), ExtResource("7_5vw27")])
+sushi_scenes = Array[PackedScene]([ExtResource("4_kek77"), ExtResource("5_4c57u"), ExtResource("6_272bh"), ExtResource("7_5vw27"), ExtResource("12_vivmo")])
 left_spawn_point = NodePath("LeftSpawner")
 right_spawn_point = NodePath("RightSpawner")
 
 [node name="LeftSpawner" parent="Spawner" index="0"]
 position = Vector2(-128, 896)
 
-[node name="Timer2dSecondTimer" type="Timer" parent="."]
+[node name="20SecondTimer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
 
@@ -78,8 +81,20 @@ sushi_scale = 0.3
 
 [node name="CRT" parent="." instance=ExtResource("14_w48qg")]
 offset_left = 1326.0
-offset_top = 43.0
+offset_top = 32.0
 offset_right = 1839.0
 offset_bottom = 311.0
+
+[node name="CRT2" parent="." instance=ExtResource("14_w48qg")]
+offset_left = 712.0
+offset_top = 32.0
+offset_right = 1200.0
+offset_bottom = 315.0
+
+[node name="CRT3" parent="." instance=ExtResource("14_w48qg")]
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 584.0
+offset_bottom = 314.0
 
 [editable path="Spawner"]

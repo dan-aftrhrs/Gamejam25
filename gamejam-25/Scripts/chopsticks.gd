@@ -5,6 +5,7 @@ extends Node2D
 @export_range(0.1, 50.0, 0.1) var move_speed: float = 25.0 # Speed at which chopsticks move between rows
 
 @export var chopstick_sprite: Sprite2D # Reference to your chopsticks sprite
+@onready var animated_sprite_2d = $AnimatedSprite2D # Get the AnimatedSprite2D node
 
 var target_y_pos: float # The Y position the chopsticks are currently moving towards
 var current_row: int = 0 # 0 for top, 1 for bottom
@@ -16,6 +17,7 @@ func _ready():
 	global_position = Vector2(global_position.x, top_row_y_pos)
 	target_y_pos = top_row_y_pos
 	current_row = 0
+	animated_sprite_2d.play("Idle") # Play Idle animation initially
 
 func _process(delta):
 	# Move chopsticks smoothly towards the target Y position
@@ -26,6 +28,9 @@ func _input(event):
 		toggle_chopstick_row()
 	elif event.is_action_pressed("select_sushi"):
 		attempt_select_sushi()
+		animated_sprite_2d.play("Pick") # Play Pick animation when select_sushi is pressed
+	elif event.is_action_released("select_sushi"):
+		animated_sprite_2d.play("Idle") # Play Idle animation when select_sushi is released
 
 func toggle_chopstick_row():
 	if current_row == 0:
@@ -36,9 +41,6 @@ func toggle_chopstick_row():
 		current_row = 0
 
 func attempt_select_sushi():
-	# This is a placeholder. We'll refine collision detection next.
-	# For now, let's assume we can query for overlapping sushi.
-
 	# Find all children of the main scene that are sushi instances
 	var main_node = get_parent() # Assuming Chopsticks is child of Main
 	if not main_node: return
