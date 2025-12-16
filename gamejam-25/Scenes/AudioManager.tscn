@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdal7ljjias0s"]
+
+[ext_resource type="Script" uid="uid://b18is1y8l3c8o" path="res://Scenes/audio_manager.gd" id="1_dygvs"]
+[ext_resource type="AudioStream" uid="uid://dhh7f3qrkopvw" path="res://Assets/Audio/SUSHI LOOP.mp3" id="2_u6owb"]
+[ext_resource type="AudioStream" uid="uid://d4jlvm10r6aoy" path="res://Assets/Audio/SUSHI LOOP (Game play music) .mp3" id="3_yq78e"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_dygvs")
+menu_music = ExtResource("2_u6owb")
+game_music = ExtResource("3_yq78e")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]

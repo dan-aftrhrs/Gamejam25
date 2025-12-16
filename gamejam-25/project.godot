@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Gamejam25"
-run/main_scene="uid://dgua6duu8oh15"
+run/main_scene="uid://cff7x2treidox"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Global.gd"
+AudioManager="*res://Scenes/AudioManager.tscn"
 
 [display]
 

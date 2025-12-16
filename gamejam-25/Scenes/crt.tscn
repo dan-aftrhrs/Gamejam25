@@ -1,24 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl3a8vueaql20"]
 
-[ext_resource type="Shader" uid="uid://0flbg13pbmqk" path="res://CRT.gdshader" id="1_u3egi"]
+[ext_resource type="Shader" uid="uid://0flbg13pbmqk" path="res://Assets/CRT.gdshader" id="1_u3egi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vivmo"]
 shader = ExtResource("1_u3egi")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.114000005415
-shader_parameter/scanlines_width = 0.25
+shader_parameter/scanlines_opacity = 0.3290000156275
+shader_parameter/scanlines_width = 0.5
 shader_parameter/grille_opacity = 0.2000000095
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
-shader_parameter/roll_speed = 2.0
-shader_parameter/roll_size = 31.374001490265
-shader_parameter/roll_variation = 1.8
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 21.094001001965
+shader_parameter/roll_variation = 2.48700011487262
 shader_parameter/distort_intensity = 0.05
 shader_parameter/noise_opacity = 0.102000004845
 shader_parameter/noise_speed = 5.0
 shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.011000048022500097
+shader_parameter/aberration = 0.01100004802250009
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.04800000228

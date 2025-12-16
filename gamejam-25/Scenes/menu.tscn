@@ -1,12 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://cff7x2treidox"]
+[gd_scene load_steps=6 format=3 uid="uid://cff7x2treidox"]
 
-[ext_resource type="Script" uid="uid://df51t4wa6rkfn" path="res://start.gd" id="1_lti8b"]
+[ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="1_cayip"]
+[ext_resource type="Script" uid="uid://df51t4wa6rkfn" path="res://Scripts/start.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_158mb"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_cayip"]
+keycode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_158mb"]
+events = [SubResource("InputEventKey_cayip")]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -939.0
+offset_top = -347.0
+offset_right = 981.0
+offset_bottom = 733.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_158mb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Or Press Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CRT" parent="." instance=ExtResource("1_cayip")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -24,6 +70,7 @@ offset_bottom = -48.99994
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
+shortcut = SubResource("Shortcut_158mb")
 text = "Start"
 script = ExtResource("1_lti8b")
 

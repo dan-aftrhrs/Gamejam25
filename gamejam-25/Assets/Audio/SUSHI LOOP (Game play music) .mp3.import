@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/SUSHI LOOP (Game play music) .mp3-9f9cf62abcb
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

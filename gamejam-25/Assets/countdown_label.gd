@@ -9,4 +9,4 @@ func _process(_delta):
 		var seconds = floor(fmod(time_left,60))
 		text = ("%02d" % [seconds])
 	else:
-		text = "Times up!"
+		text = "Ready"

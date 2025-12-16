@@ -1,7 +1,7 @@
 extends Node
 
 @export_range(0.1, 5.0, 0.1) var spawn_interval: float = 1.0 # Time between spawns
-@export_range(50, 500, 10) var sushi_speed: float = 100.0
+@export_range(50, 1000, 10) var sushi_speed: float = 100.0
 @export var sushi_scenes: Array[PackedScene] = [] # Drag em here
 
 @export var left_spawn_point: Marker2D
@@ -19,6 +19,8 @@ func _ready():
 	add_child(spawn_timer)
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.timeout.connect(on_spawn_timer_timeout)
+	
+func start_game_spawning():
 	spawn_timer.start()
 
 func on_spawn_timer_timeout():

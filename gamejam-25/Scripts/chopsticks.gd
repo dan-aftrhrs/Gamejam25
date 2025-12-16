@@ -6,6 +6,7 @@ extends Node2D
 
 @export var chopstick_sprite: Sprite2D # Reference to your chopsticks sprite
 @onready var animated_sprite_2d = $AnimatedSprite2D # Get the AnimatedSprite2D node
+@onready var chopstick_sound: AudioStreamPlayer2D = $ChopStickSound
 
 var target_y_pos: float # The Y position the chopsticks are currently moving towards
 var current_row: int = 0 # 0 for top, 1 for bottom
@@ -27,6 +28,7 @@ func _input(event):
 	if event.is_action_pressed("move_chopsticks"):
 		toggle_chopstick_row()
 	elif event.is_action_pressed("select_sushi"):
+		chopstick_sound.play()
 		attempt_select_sushi()
 		animated_sprite_2d.play("Pick") # Play Pick animation when select_sushi is pressed
 	elif event.is_action_released("select_sushi"):

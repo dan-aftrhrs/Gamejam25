@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://boef7lov2gv82"]
+[gd_scene load_steps=12 format=3 uid="uid://boef7lov2gv82"]
 
 [ext_resource type="Script" uid="uid://bqtveaepwttfo" path="res://Scripts/chopsticks.gd" id="1_1qa1y"]
 [ext_resource type="Texture2D" uid="uid://cgsemm163wj8e" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_1.PNG" id="2_5o633"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ds1kyn3povhhc" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_4.PNG" id="5_v8iox"]
 [ext_resource type="Texture2D" uid="uid://b5u8w3th77cfo" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_5.PNG" id="6_f2j5u"]
 [ext_resource type="Texture2D" uid="uid://fu7sed4pregj" path="res://Assets/Sprites/Chopsticks/Chopstickanimations_6.PNG" id="7_skf3g"]
+[ext_resource type="AudioStream" uid="uid://cgwt08mim8v70" path="res://Assets/Audio/SFX/Chopstick.mp3" id="8_5o633"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4q0l"]
 atlas = ExtResource("6_f2j5u")
@@ -71,3 +72,6 @@ scale = Vector2(1079.7311, 158.36823)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.07577419)
 shape = SubResource("RectangleShape2D_1qa1y")
+
+[node name="ChopStickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_5o633")

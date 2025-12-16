@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://c11lr626rjqsc"]
+
+[ext_resource type="Script" uid="uid://cgmggw6mjc26u" path="res://Scenes/end_screen.gd" id="1_gcms0"]
+[ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_2ohhu"]
+[ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="3_jrx8a"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_2ohhu"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_jrx8a"]
+events = [SubResource("InputEventKey_2ohhu")]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gcms0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1.0
+offset_right = 960.0
+offset_bottom = 1079.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2ohhu")
+
+[node name="CRT" parent="." instance=ExtResource("3_jrx8a")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FinalScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Final Score: 0
+"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="FinalScoreLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 36.0
+offset_right = 256.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+shortcut = SubResource("Shortcut_jrx8a")
+text = "Play again"
