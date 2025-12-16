@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=24 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c6eafh0vb50jp" path="res://Scenes/Sushi Types/Wasabi.tscn" id="7_5vw27"]
 [ext_resource type="AudioStream" uid="uid://t6hbwmmshffb" path="res://Assets/Audio/SFX/SOUND FX 02 X_x.mp3" id="8_devvj"]
 [ext_resource type="Script" uid="uid://copj1oweop7wq" path="res://Scripts/CounterDisplay.gd" id="9_03owx"]
+[ext_resource type="FontFile" uid="uid://d1nuusjeeto83" path="res://Assets/Fonts/sukajan-brush-demo.regular.otf" id="10_devvj"]
 [ext_resource type="PackedScene" uid="uid://uf8u26ukku4e" path="res://Scenes/Sushi Types/Ebi.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="14_w48qg"]
 [ext_resource type="Script" uid="uid://dnp607doxi656" path="res://Assets/countdown_label.gd" id="17_yaehf"]
@@ -24,6 +25,9 @@
 [sub_resource type="Theme" id="Theme_074og"]
 default_font_size = 100
 /font_sizes/size = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gh4u"]
+size = Vector2(150, 300)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("order_display", "spawner_node")]
 script = ExtResource("1_7mycd")
@@ -46,13 +50,19 @@ texture = ExtResource("2_272bh")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = -11.500061
-offset_right = 1924.0
-offset_bottom = 723.0
+offset_left = 7.0
+offset_top = -4.0
+offset_right = 1931.5
+offset_bottom = 744.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("10_devvj")
 theme_override_font_sizes/font_size = 100
+text = "one"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -141,5 +151,26 @@ offset_bottom = 314.0
 stream = ExtResource("18_kjvhd")
 volume_db = 5.0
 pitch_scale = 1.2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(956, 853)
+scale = Vector2(4.1255813, 1)
+shape = SubResource("RectangleShape2D_2gh4u")
+action = "select_sushi"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(1584.9999, 853)
+scale = Vector2(4.1255813, 1)
+shape = SubResource("RectangleShape2D_2gh4u")
+action = "move_chopsticks"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(328, 853)
+scale = Vector2(4.1255813, 1)
+shape = SubResource("RectangleShape2D_2gh4u")
+action = "move_chopsticks"
+visibility_mode = 1
 
 [editable path="Spawner"]

@@ -63,17 +63,17 @@ func run_start_countdown():
 	start_label.visible = true
 	
 	# "3"
-	start_label.text = "1"
+	start_label.text = "One"
 	sfx_player.play() # Uses the sound currently assigned to the player (or previous one)
 	# Note: Ideally, set a default beep in the inspector or load it here if needed
 	await get_tree().create_timer(1.0).timeout
 	
 	# "2"
-	start_label.text = "2"
+	start_label.text = "Two"
 	await get_tree().create_timer(1.0).timeout
 	
 	# "1"
-	start_label.text = "3"
+	start_label.text = "Three"
 	await get_tree().create_timer(1.0).timeout
 	
 	# "GO!"

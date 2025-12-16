@@ -31,6 +31,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_158mb")
 
+[node name="CRT" parent="." instance=ExtResource("1_cayip")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -44,17 +56,21 @@ text = "Or Press Space"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CRT" parent="." instance=ExtResource("1_cayip")]
+[node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = 2.0
+offset_top = -29.0
+offset_right = 2.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Space: Pick up Sushi , Up/Down : Change Lane"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="start" type="Button" parent="."]
 layout_mode = 1
