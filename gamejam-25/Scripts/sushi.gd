@@ -25,3 +25,30 @@ func get_effective_width() -> float:
 	if sushi_sprite and sushi_sprite.texture:
 		return sushi_sprite.texture.get_width() * sushi_sprite.scale.x
 	return 50.0
+	
+
+
+
+func off_screen_wasabi() -> void:
+	queue_free()
+	print("queue free ", sushi_type)
+
+
+func off_screen_tomago() -> void:
+	queue_free()
+	print("queue free ", sushi_type)
+
+
+func off_screen_ebi() -> void:
+	queue_free()
+	print("queue free ", sushi_type)
+
+
+func off_screen_maki() -> void:
+	queue_free()
+	print("queue free ", sushi_type)
+
+
+func off_screen_nigiri() -> void:
+	queue_free()
+	print("queue free ", sushi_type)

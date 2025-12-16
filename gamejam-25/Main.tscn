@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=20 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
@@ -16,8 +16,13 @@
 [ext_resource type="Script" uid="uid://copj1oweop7wq" path="res://Scripts/CounterDisplay.gd" id="9_03owx"]
 [ext_resource type="PackedScene" uid="uid://uf8u26ukku4e" path="res://Scenes/Sushi Types/Ebi.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="14_w48qg"]
+[ext_resource type="Script" uid="uid://dnp607doxi656" path="res://countdown_label.gd" id="17_yaehf"]
 
 [sub_resource type="Theme" id="Theme_272bh"]
+
+[sub_resource type="Theme" id="Theme_074og"]
+default_font_size = 100
+/font_sizes/size = 100
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mycd")
@@ -34,17 +39,13 @@ texture = ExtResource("2_272bh")
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("left_spawn_point", "right_spawn_point") instance=ExtResource("3_5vw27")]
 spawn_interval = 0.5
-sushi_speed = 400.0
+sushi_speed = 500.0
 sushi_scenes = Array[PackedScene]([ExtResource("4_kek77"), ExtResource("5_4c57u"), ExtResource("6_272bh"), ExtResource("7_5vw27"), ExtResource("12_vivmo")])
 left_spawn_point = NodePath("LeftSpawner")
 right_spawn_point = NodePath("RightSpawner")
 
 [node name="LeftSpawner" parent="Spawner" index="0"]
 position = Vector2(-128, 896)
-
-[node name="20SecondTimer" type="Timer" parent="."]
-wait_time = 20.0
-one_shot = true
 
 [node name="Chopsticks" parent="." instance=ExtResource("6_7mycd")]
 
@@ -96,5 +97,21 @@ offset_left = 80.0
 offset_top = 32.0
 offset_right = 584.0
 offset_bottom = 314.0
+
+[node name="Countdown_label" type="RichTextLabel" parent="."]
+offset_left = 728.0
+offset_top = 40.0
+offset_right = 1200.0
+offset_bottom = 224.0
+theme = SubResource("Theme_074og")
+text = "COUNT DOWN"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("17_yaehf")
+
+[node name="20SecondTimer" type="Timer" parent="Countdown_label"]
+wait_time = 21.0
+one_shot = true
+autostart = true
 
 [editable path="Spawner"]

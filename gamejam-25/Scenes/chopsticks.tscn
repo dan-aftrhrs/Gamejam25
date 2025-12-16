@@ -49,13 +49,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qa1y"]
 size = Vector2(0.1407758, 0.70721245)
 
-[node name="Chopsticks" type="Node2D" node_paths=PackedStringArray("chopstick_sprite")]
+[node name="Chopsticks" type="Node2D"]
 z_index = 1
 position = Vector2(960, 1300)
 script = ExtResource("1_1qa1y")
 top_row_y_pos = 700.0
 bottom_row_y_pos = 900.0
-chopstick_sprite = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 76)
