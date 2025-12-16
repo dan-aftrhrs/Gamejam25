@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c11lr626rjqsc"]
+[gd_scene load_steps=7 format=3 uid="uid://c11lr626rjqsc"]
 
 [ext_resource type="Script" uid="uid://cgmggw6mjc26u" path="res://Scenes/end_screen.gd" id="1_gcms0"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_2ohhu"]
 [ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="3_jrx8a"]
+[ext_resource type="AudioStream" uid="uid://borwxp4t178mr" path="res://Assets/Audio/SFX/Gongsfx.mp3" id="4_3gukv"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_2ohhu"]
 device = -1
@@ -75,3 +76,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 shortcut = SubResource("Shortcut_jrx8a")
 text = "Play again"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3gukv")
+autoplay = true

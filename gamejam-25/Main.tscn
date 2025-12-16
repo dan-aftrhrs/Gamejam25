@@ -97,10 +97,10 @@ sushi_scale = 0.3
 [node name="OrderDisplay" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1457.0
-offset_top = 138.0
-offset_right = 1730.0
-offset_bottom = 167.0
+offset_left = 1409.0
+offset_top = 122.0
+offset_right = 1764.0
+offset_bottom = 177.0
 script = ExtResource("9_03owx")
 plate_spacing = 80.0
 sushi_scale = 0.15

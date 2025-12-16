@@ -5,17 +5,17 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vivmo"]
 shader = ExtResource("1_u3egi")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.3290000156275
-shader_parameter/scanlines_width = 0.5
-shader_parameter/grille_opacity = 0.2000000095
+shader_parameter/scanlines_opacity = 0.0490000023275
+shader_parameter/scanlines_width = 0.13600000646
+shader_parameter/grille_opacity = 0.08800000418
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
 shader_parameter/roll_speed = 3.0
-shader_parameter/roll_size = 21.094001001965
+shader_parameter/roll_size = 6.1410002916975
 shader_parameter/roll_variation = 2.48700011487262
 shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.102000004845
+shader_parameter/noise_opacity = 0.046000002185
 shader_parameter/noise_speed = 5.0
 shader_parameter/static_noise_intensity = 0.06
 shader_parameter/aberration = 0.01100004802250009
