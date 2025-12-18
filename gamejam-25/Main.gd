@@ -122,6 +122,8 @@ func on_sushi_selected(sushi_instance: CharacterBody2D):
 	if selected_type == expected_type:
 		# --- CORRECT ---
 		_play_sfx(success_sound)
+		score += 5
+		update_score_ui()
 		player_display.add_sushi_to_counter(sushi_map[selected_type])
 		player_progress_index += 1
 		
@@ -140,7 +142,7 @@ func complete_order_success():
 
 func fail_order():
 	_play_sfx(fail_sound)
-	score -= 5
+	score -= 10
 	print("ORDER FAILED! Score: ", score)
 	update_score_ui()
 	player_progress_index = 0

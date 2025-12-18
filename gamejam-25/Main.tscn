@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=25 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
@@ -21,9 +21,11 @@
 [ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="14_w48qg"]
 [ext_resource type="Script" uid="uid://dnp607doxi656" path="res://Assets/countdown_label.gd" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://mtvkaeb12s87" path="res://Assets/Audio/SFX/KAOUNTO DAUNO.mp3" id="18_kjvhd"]
+[ext_resource type="FontFile" uid="uid://bmobh45uuxks" path="res://Assets/Fonts/scarfire.regular.otf" id="21_d13ii"]
 
 [sub_resource type="Theme" id="Theme_074og"]
-default_font_size = 100
+default_font = ExtResource("21_d13ii")
+default_font_size = 130
 /font_sizes/size = 100
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2gh4u"]
@@ -125,6 +127,7 @@ offset_right = 576.0
 offset_bottom = 229.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("21_d13ii")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1

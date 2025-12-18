@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cff7x2treidox"]
+[gd_scene load_steps=8 format=3 uid="uid://cff7x2treidox"]
 
 [ext_resource type="PackedScene" uid="uid://bl3a8vueaql20" path="res://Scenes/crt.tscn" id="1_cayip"]
 [ext_resource type="Script" uid="uid://df51t4wa6rkfn" path="res://Scripts/start.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_158mb"]
+[ext_resource type="FontFile" uid="uid://cpdwnq4d7l8w3" path="res://Assets/Fonts/Osake.otf" id="3_158mb"]
+[ext_resource type="FontFile" uid="uid://bmobh45uuxks" path="res://Assets/Fonts/scarfire.regular.otf" id="3_wwsa2"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_cayip"]
 keycode = 32
@@ -51,6 +53,7 @@ anchor_bottom = 1.0
 offset_top = 295.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_wwsa2")
 theme_override_font_sizes/font_size = 40
 text = "Or Press Space"
 horizontal_alignment = 1
@@ -67,27 +70,32 @@ offset_right = 2.0
 offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_wwsa2")
 theme_override_font_sizes/font_size = 40
-text = "Space: Pick up Sushi , Up/Down : Change Lane"
+text = "Space: Pick up Sushi ,                                    Up/Down : Change Lane"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="start" type="Button" parent="."]
+top_level = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.99994
-offset_top = -79.99994
-offset_right = -69.99994
-offset_bottom = -48.99994
+offset_left = -152.0
+offset_top = -108.0
+offset_right = -92.0
+offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5, 5)
+theme_override_fonts/font = ExtResource("3_158mb")
 shortcut = SubResource("Shortcut_158mb")
 text = "Start"
+autowrap_trim_flags = 0
+icon_alignment = 1
 script = ExtResource("1_lti8b")
 
 [connection signal="pressed" from="start" to="start" method="_on_pressed"]
