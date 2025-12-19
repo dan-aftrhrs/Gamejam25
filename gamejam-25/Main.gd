@@ -15,6 +15,7 @@ extends Node2D
 # Audio Files
 @export var success_sound: AudioStream
 @export var fail_sound: AudioStream
+@export var complete_plate: AudioStream
 
 # Sushi Textures
 @export var maki_counter_img: Texture2D
@@ -41,7 +42,7 @@ func _ready():
 		print("ERROR: Chopsticks node not found!")
 	
 	game_timer.timeout.connect(_on_game_timer_timeout)
-
+	
 	# 3. Build the Map
 	sushi_map = {
 		"Maki": maki_counter_img,
@@ -138,6 +139,7 @@ func on_sushi_selected(sushi_instance: CharacterBody2D):
 func complete_order_success():
 	score += 20
 	update_score_ui()
+	_play_sfx(complete_plate)
 	generate_new_order()
 
 func fail_order():

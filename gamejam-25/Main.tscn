@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://dgua6duu8oh15"]
+[gd_scene load_steps=27 format=3 uid="uid://dgua6duu8oh15"]
 
 [ext_resource type="Script" uid="uid://dgtrq35j7ok37" path="res://Main.gd" id="1_7mycd"]
 [ext_resource type="Texture2D" uid="uid://xhn0utn8rb6k" path="res://Assets/Sprites/Game_bg.png" id="2_272bh"]
 [ext_resource type="Texture2D" uid="uid://c80vqg0qhp76j" path="res://Assets/Sprites/Makiroll_Plate.PNG" id="2_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://cy6xpge8qlbx7" path="res://Scenes/spawner.tscn" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://ciblvko17seiv" path="res://Assets/Sprites/Nigiri_Plate.PNG" id="3_c2ibq"]
+[ext_resource type="AudioStream" uid="uid://cd4udcv5ldj5u" path="res://Assets/Audio/SFX/CompletePlate.wav" id="4_d13ii"]
 [ext_resource type="Texture2D" uid="uid://d2nro34a8raxn" path="res://Assets/Sprites/Tomago_Plate.PNG" id="4_j4qnp"]
 [ext_resource type="PackedScene" uid="uid://bfecoktfsgpjg" path="res://Scenes/Sushi Types/Nigiri.tscn" id="4_kek77"]
 [ext_resource type="PackedScene" uid="uid://rr28e8unhg3" path="res://Scenes/Sushi Types/Tomago.tscn" id="5_4c57u"]
@@ -22,14 +23,13 @@
 [ext_resource type="Script" uid="uid://dnp607doxi656" path="res://Assets/countdown_label.gd" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://mtvkaeb12s87" path="res://Assets/Audio/SFX/KAOUNTO DAUNO.mp3" id="18_kjvhd"]
 [ext_resource type="FontFile" uid="uid://bmobh45uuxks" path="res://Assets/Fonts/scarfire.regular.otf" id="21_d13ii"]
+[ext_resource type="FontFile" uid="uid://dchypo1xi6gwx" path="res://Assets/Fonts/Shadow Whisper Demo.ttf" id="24_1u8w0"]
+[ext_resource type="Script" uid="uid://cnf4yv7mjw8te" path="res://touch_screen.gd" id="25_0odxb"]
 
 [sub_resource type="Theme" id="Theme_074og"]
 default_font = ExtResource("21_d13ii")
 default_font_size = 130
 /font_sizes/size = 100
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gh4u"]
-size = Vector2(150, 300)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("order_display", "spawner_node")]
 script = ExtResource("1_7mycd")
@@ -37,6 +37,7 @@ order_display = NodePath("OrderDisplay")
 spawner_node = NodePath("Spawner")
 success_sound = ExtResource("7_2gh4u")
 fail_sound = ExtResource("8_devvj")
+complete_plate = ExtResource("4_d13ii")
 maki_counter_img = ExtResource("2_c6i3y")
 nigiri_counter_img = ExtResource("3_c2ibq")
 tomago_counter_img = ExtResource("4_j4qnp")
@@ -81,9 +82,9 @@ position = Vector2(-128, 896)
 [node name="Chopsticks" parent="." instance=ExtResource("6_7mycd")]
 
 [node name="Countdown_label" type="RichTextLabel" parent="."]
-offset_left = 728.0
+offset_left = 704.0
 offset_top = 40.0
-offset_right = 1200.0
+offset_right = 1208.0
 offset_bottom = 224.0
 theme = SubResource("Theme_074og")
 text = "COUNT DOWN"
@@ -132,6 +133,17 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label" type="Label" parent="."]
+offset_left = 1384.0
+offset_top = 16.0
+offset_right = 1792.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("24_1u8w0")
+theme_override_font_sizes/font_size = 80
+text = "Order"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CRT" parent="." instance=ExtResource("14_w48qg")]
 offset_left = 1328.0
 offset_top = 32.0
@@ -155,25 +167,10 @@ stream = ExtResource("18_kjvhd")
 volume_db = 5.0
 pitch_scale = 1.2
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(956, 853)
-scale = Vector2(4.1255813, 1)
-shape = SubResource("RectangleShape2D_2gh4u")
-action = "select_sushi"
-visibility_mode = 1
-
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
-position = Vector2(1584.9999, 853)
-scale = Vector2(4.1255813, 1)
-shape = SubResource("RectangleShape2D_2gh4u")
-action = "move_chopsticks"
-visibility_mode = 1
-
-[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
-position = Vector2(328, 853)
-scale = Vector2(4.1255813, 1)
-shape = SubResource("RectangleShape2D_2gh4u")
-action = "move_chopsticks"
-visibility_mode = 1
+[node name="TouchScreen" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 0
+script = ExtResource("25_0odxb")
 
 [editable path="Spawner"]
